@@ -28,7 +28,6 @@ nav ul li{
 nav ul li a{
     display: block;
     padding: 8px;
-    transition-duration: 700ms;
     font-family: sans-serif;
 }
 
@@ -37,10 +36,11 @@ body{
 
 }
 
-p, label ,h1, article>ul>li, tr, td, th{
+p, label ,h1, article>ul>li{
     font-family: sans-serif;
-    padding-top: 0.2rem;
+    padding-top: 0.5rem;
 }
+
 
 /*
 Dynamic Tags
@@ -50,8 +50,12 @@ Dynamic Tags
     background-color: #f8c471;
 }
 
-#tablediv{
 
+/*
+overzicht specifieke css
+*/
+
+#tablediv{
     display:grid;
     text-align: left;
     padding-left: 10%;
@@ -59,16 +63,19 @@ Dynamic Tags
     padding-right: 10%
 }
 
-/*
-Overzicht specifieke css
-*/
-
-td{
-    padding-top:1rem;
+tr, td, th{
+    font-family: sans-serif;
+    padding:0.5rem;
 }
 
+
+th, td, table {
+    border: 2px solid black;
+}
+
+
 /*
-Home specifieke css
+home specifieke css
 */
 
 h1{
@@ -77,4 +84,20 @@ h1{
     padding: 1rem;
 }
 
+#Hometext{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/*
+voegToe specifieke css
+*/
+
+label {
+    line-height: 32px;
+}
+
+input {
+    height: 20px;
+}
 

@@ -1,16 +1,31 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: toond
-  Date: 9/28/2020
-  Time: 2:48 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<header>
+</header>
+<main>
+
+  <nav>
+    <ul>
+      <li><a href="index.jsp" id="onPage">Home</a></li>
+      <li><a href="Servlet">Overzicht</a></li>
+      <li><a href="voegToe.jsp">Voeg Toe</a></li>
+    </ul>
+  </nav>
+  <div id="Hometext">
+    <h1> Volleybal Club: De rustige</h1>
+    <p>Welkom in volleybal club: De rustige. Wij zijn een kleine club gesitueerd in het hartje van Putte. Onder leiding van Coach Vortice hebben zijn we al vaak in de nationale finales geraakt.
+      We hopen nog vaker het nationaal tournement bij te wonen.</p>
+    <p>Onze zaal bevindt zich op het terrein Klein Boom, daar houden we de meeste trainingen en oefen wedstrijden.
+      Ondanks onze naam hebben we een hart van vuur voor het volleybal, maar boven alles proberen we plezier te hebben met onze ploegmaten.</p>
+  </div>
+</main>
+</body>
 </html>
