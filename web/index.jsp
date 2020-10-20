@@ -15,8 +15,9 @@
   <nav>
     <ul>
       <li><a href="index.jsp" id="onPage">Home</a></li>
-      <li><a href="Servlet">Overzicht</a></li>
-      <li><a href="voegToe.jsp">Voeg Toe</a></li>
+      <li><a href="Servlet?command=overzicht">Overzicht</a></li>
+      <li><a href="voegtoe.jsp">Voeg Toe</a></li>
+      <li><a href="zoek.jsp">Zoek</a></li>
     </ul>
   </nav>
   <div id="Hometext">

@@ -15,8 +15,9 @@
     <nav>
         <ul>
             <li><a href="index.jsp">Home</a></li>
-            <li><a href="Servlet" id="onPage">Overzicht</a></li>
-            <li><a href="voegToe.jsp">Voeg Toe</a></li>
+            <li><a href="Servlet?command=overzicht" id="onPage">Overzicht</a></li>
+            <li><a href="voegtoe.jsp">Voeg Toe</a></li>
+            <li><a href="zoek.jsp">Zoek</a></li>
         </ul>
     </nav>
     <h1>Overzicht van spelers</h1>
@@ -42,6 +43,7 @@
         </td>
         <td><%=speler.getWedstrijden()%>
         </td>
+        <td><a href="Servlet?command=verwijder&naam=<%=speler.getNaam()%>">Verwijder</a></td>
     </tr>
     <%}}%>
 

@@ -28,9 +28,24 @@ public class SpelerDB {
         spelers.add(speler);
     }
 
+    public Speler vindSpeler(String naam){
+        for(Speler speler: spelers){
+            if(speler.getNaam().equals(naam)){return speler;}
 
+        }
+        return null;
+    }
 
     public ArrayList<Speler> getSpelers(){
         return spelers;
+    }
+
+    public void verwijderSpeler(String naam){
+        for (Speler speler: spelers){
+            if (speler.getNaam().equals(naam)){
+                spelers.remove(speler);
+                break;
+            }
+        }
     }
 }

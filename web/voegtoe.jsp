@@ -13,13 +13,14 @@
     <nav>
         <ul>
             <li><a href="index.jsp">Home</a></li>
-            <li><a href="Servlet">Overzicht</a></li>
-            <li><a href="voegToe.jsp" id="onPage">Voeg Toe</a></li>
+            <li><a href="Servlet?command=overzicht">Overzicht</a></li>
+            <li><a href="voegtoe.jsp" id="onPage">Voeg Toe</a></li>
+            <li><a href="zoek.jsp">Zoek</a></li>
         </ul>
     </nav>
 <h1>Voeg hier een speler toe</h1>
     <article id="tablediv">
-        <form method="post" action="Servlet" novalidate>
+        <form method="post" action="Servlet?command=voegtoe" novalidate>
             <label for="speler">Speler: </label><br>
             <input type="text" id="speler" name="speler" required><br>
             <label for ="leeftijd">Leeftijd: </label><br>
@@ -28,7 +29,7 @@
             <input type="text" id="positie" name="positie" required><br>
             <label for="wedstrijdenGespeeld">Wedstrijden Gespeeld: </label><br>
             <input type="number" id="wedstrijdenGespeeld" name="wedstrijdenGespeeld" required><br>
-            <input type="submit" value="Ok">
+            <input type="submit" value="Submit">
         </form>
     </article>
 
