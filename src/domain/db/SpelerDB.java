@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class SpelerDB {
 
-    ArrayList<Speler> spelers;
+    ArrayList<Speler> spelerdb;
 
 
     public SpelerDB(){
@@ -15,7 +15,7 @@ public class SpelerDB {
         Speler alessioVortice = new Speler("Alessio Vortice", 20, "Wing spiker", 6);
         Speler jarneArnouts = new Speler("Jarne Arnouts", 18, "Libero", 18);
 
-        spelers = new ArrayList<>();
+        spelerdb = new ArrayList<>();
         voegToe(robbeSarens);
         voegToe(gillesVanDenHeuvel);
         voegToe(alessioVortice);
@@ -25,25 +25,25 @@ public class SpelerDB {
     public void voegToe(Speler speler){
         if (speler==null)
             throw new IllegalArgumentException("Geen geldige student");
-        spelers.add(speler);
+        spelerdb.add(speler);
     }
 
     public Speler vindSpeler(String naam){
-        for(Speler speler: spelers){
+        for(Speler speler: spelerdb){
             if(speler.getNaam().equals(naam)){return speler;}
 
         }
         return null;
     }
 
-    public ArrayList<Speler> getSpelers(){
-        return spelers;
+    public ArrayList<Speler> getSpelerdb(){
+        return spelerdb;
     }
 
     public void verwijderSpeler(String naam){
-        for (Speler speler: spelers){
+        for (Speler speler: spelerdb){
             if (speler.getNaam().equals(naam)){
-                spelers.remove(speler);
+                spelerdb.remove(speler);
                 break;
             }
         }

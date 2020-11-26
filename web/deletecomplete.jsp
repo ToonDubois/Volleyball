@@ -19,19 +19,19 @@
 <main>
     <nav>
         <ul>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="Servlet?command=overzicht">Overzicht</a></li>
-            <li><a href="voegtoe.jsp">Voeg Toe</a></li>
-            <li><a href="zoek.jsp">Zoek</a></li>
+            <li><a href="ENindex.jsp">Home</a></li>
+            <li><a href="Servlet?command=overzicht">Overview</a></li>
+            <li><a href="add.jsp">Add</a></li>
+            <li><a href="search.jsp">Search</a></li>
         </ul>
     </nav>
-    <h1>Verwijder deze speler</h1>
+    <h1>Delete this player</h1>
     <article id="tablediv">
-        <p>Ben je zeker dat je de speler ${naam} wil verwijderen?</p><br>
+        <p>Are you sure you want to delete player ${naam}</p><br>
         <form action="Servlet?command=verwijderVolledig" method="POST">
             <input type="hidden" name="naam" value="${naam}">
-            <input type="submit" name="submit" value="Zeker">
-            <input type="submit" name="submit" value="Toch niet">
+            <input type="submit" name="submit" value="Yes">
+            <input type="submit" name="submit" value="No">
         </form>
     </article>
 </main>

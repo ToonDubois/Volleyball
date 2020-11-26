@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="domain.model.Speler" %>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
 <header>
 </header>
 <main>
+    <a href="Servlet?command=switchEN&page=overzicht" id="languageChange">EN</a>
     <nav>
         <ul>
             <li><a href="index.jsp">Home</a></li>
@@ -22,6 +24,8 @@
     </nav>
     <h1>Overzicht van spelers</h1>
     <div id="tablediv">
+        <c:if test="${not empty spelerdb}">
+
 <table style="width:100%">
     <tr>
         <th><strong>Speler</strong></th>
@@ -29,26 +33,27 @@
         <th><strong>Positie</strong></th>
         <th><strong>Wedstrijden gespeeld</strong></th>
     </tr>
-    <%
-        ArrayList<Speler> spelers = (ArrayList<Speler>)request.getAttribute("spelerdb");
-        if (spelers != null) {
-    %>
-    <%for (Speler speler: spelers) {%>
-    <tr>
-        <td><%=speler.getNaam()%>
-        </td>
-        <td><%=speler.getLeeftijd()%>
-        </td>
-        <td><%=speler.getPositie()%>
-        </td>
-        <td><%=speler.getWedstrijden()%>
-        </td>
-        <td><a href="Servlet?command=verwijder&naam=<%=speler.getNaam()%>">Verwijder</a></td>
-    </tr>
-    <%}}%>
 
+
+    <c:forEach var="speler" items="${spelerdb}">
+    <tr>
+        <td>${speler.naam}
+        </td>
+        <td>${speler.leeftijd}
+        </td>
+        <td>${speler.positie}
+        </td>
+        <td>${speler.wedstrijden}
+        </td>
+        <td><a href="Servlet?command=verwijder&naam=${speler.naam}">Verwijder</a></td>
+        <td><a href="Servlet?command=update&naam=${speler.naam}">Update</a></td>
+    </tr>
+    </c:forEach>
+    
 </table>
+        </c:if>
     </div>
+
 </main>
 </body>
 </html>

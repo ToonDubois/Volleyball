@@ -16,23 +16,22 @@
 <header>
 </header>
 <main>
-    <a href="Servlet?command=switchEN&page=gevonden">EN</a>
     <nav>
         <ul>
-            <li><a href="index.jsp" id="onPage">Home</a></li>
-            <li><a href="Servlet?command=overzicht">Overzicht</a></li>
-            <li><a href="voegtoe.jsp">Voeg Toe</a></li>
-            <li><a href="zoek.jsp">Zoek</a></li>
+            <li><a href="ENindex.jsp">Home</a></li>
+            <li><a href="Servlet?command=overzicht">Overview</a></li>
+            <li><a href="add.jsp">Add</a></li>
+            <li><a href="search.jsp">Search</a></li>
         </ul>
     </nav>
-<h1>Speler gevonden</h1>
+    <h1>Speler gevonden</h1>
 
     <div id="Hometext">
-    <p>Hier is wat info over de speler die u hebt opgezocht!</p>
-    <p>Naam: ${speler.naam}</p>
-    <p>Leeftijd: ${speler.leeftijd}</p>
-    <p>Positie: ${speler.positie}</p>
-    <p>Wedstrijden gespeeld: ${speler.wedstrijden}</p>
+        <p>Here is some info about the player you searched</p>
+        <p>Name: ${speler.naam}</p>
+        <p>Age: ${speler.leeftijd}</p>
+        <p>Position: ${speler.positie}</p>
+        <p>Games played: ${speler.wedstrijden}</p>
     </div>
 </main>
 </body>

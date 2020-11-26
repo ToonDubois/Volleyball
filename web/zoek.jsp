@@ -17,6 +17,7 @@
 </header>
 
 <main>
+    <a href="Servlet?command=switchEN&page=zoek" id="languageChange">EN</a>
     <nav>
         <ul>
             <li><a href="index.jsp">Home</a></li>

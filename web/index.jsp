@@ -11,6 +11,7 @@
 <header>
 </header>
 <main>
+  <a href="Servlet?command=switchEN&page=index" id="languageChange">EN</a>
 
   <nav>
     <ul>

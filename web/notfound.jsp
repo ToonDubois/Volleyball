@@ -18,15 +18,15 @@
 <main>
     <nav>
         <ul>
-            <li><a href="index.jsp" id="onPage">Home</a></li>
-            <li><a href="Servlet?command=overzicht">Overzicht</a></li>
-            <li><a href="voegtoe.jsp">Voeg Toe</a></li>
-            <li><a href="zoek.jsp">Zoek</a></li>
+            <li><a href="ENindex.jsp">Home</a></li>
+            <li><a href="Servlet?command=overzicht">Overview</a></li>
+            <li><a href="add.jsp">Add</a></li>
+            <li><a href="search.jsp">Search</a></li>
         </ul>
     </nav>
-<h1>Niet gevonden</h1>
+    <h1>Not found</h1>
     <div id="Hometext">
-<p>De speler die u zocht zit niet in onze volleybal club</p>
+        <p>De player that you searched for is not in this club.</p>
     </div>
 </main>
 </body>
