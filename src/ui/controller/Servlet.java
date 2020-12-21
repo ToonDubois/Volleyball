@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -76,12 +77,20 @@ private SpelerDB spelerdb = new SpelerDB();
                 break;
 
             default:
-                destination = overzicht(request,response);
+                destination = index(request,response);
         }
 
         request.getRequestDispatcher(destination).forward(request, response);
 
 
+    }
+
+
+    private String index(HttpServletRequest request, HttpServletResponse response){
+        Cookie cookie = getCookieWithKey(request, "language");
+        if (cookie != null && cookie.getValue().equals("NL")){
+            return "index.jsp";}
+        else return "ENindex.jsp";
     }
 
 
@@ -98,6 +107,21 @@ private SpelerDB spelerdb = new SpelerDB();
         String naam = request.getParameter("naam");
         if(spelerdb.vindSpeler(naam)!=null){
             request.setAttribute("speler",spelerdb.vindSpeler(naam));
+
+            HttpSession session = request.getSession();
+            ArrayList<Speler> spelerssessie = (ArrayList<Speler>) session.getAttribute("spelers");
+            if(spelerssessie==null){
+                spelerssessie = new ArrayList<>();
+                session.setAttribute("spelers", spelerssessie);
+            }
+
+            try{
+                spelerssessie.add(spelerdb.vindSpeler(naam));
+            } catch (Exception e){
+
+            }
+
+
             Cookie cookie = getCookieWithKey(request, "language");
             if (cookie != null && cookie.getValue().equals("NL")){
             return "gevonden.jsp";}
@@ -188,24 +212,23 @@ private SpelerDB spelerdb = new SpelerDB();
         ArrayList<String> errors = new ArrayList<>();
 
         Speler speler = spelerdb.vindSpeler(request.getParameter("naam"));
-        setNaam(speler, request, errors);
-        setLeeftijd(speler, request, errors);
-        setPositie(speler, request, errors);
-        setWedstrijden(speler, request, errors);
+        Speler speler2 = new Speler();
+        setNaam(speler2, request, errors);
+        setLeeftijd(speler2, request, errors);
+        setPositie(speler2, request, errors);
+        setWedstrijden(speler2, request, errors);
 
         if(errors.size() == 0){
             try{
-                speler.setNaam(request.getParameter("speler"));
-                speler.setLeeftijd(Integer.parseInt(request.getParameter("leeftijd")));
-                speler.setPositie(request.getParameter("positie"));
-                speler.setWedstrijden(Integer.parseInt(request.getParameter("wedstrijdenGespeeld")));
+                speler.setSpeler(speler2);
                 return overzicht(request,response);
             }
             catch(IllegalArgumentException exc){
                 errors.add(exc.getMessage());
             }
+
         }
-        request.setAttribute("errors", errors);
+
         Cookie cookie = getCookieWithKey(request, "language");
         if (cookie != null && cookie.getValue().equals("NL")){
         return "update.jsp";}

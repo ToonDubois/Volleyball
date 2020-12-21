@@ -39,15 +39,22 @@ public class Speler {
             return i > 0;
         }
 
+        public void setSpeler(Speler speler){
+            this.naam = speler.getNaam();
+            this.leeftijd = speler.getLeeftijd();
+            this.positie = speler.getPositie();
+            this.wedstrijden = speler.getWedstrijden();
+        }
+
     public void setNaam(String naam) {
-            if(naam == null || naam.isEmpty()){
+            if(naam == null || naam.trim().isEmpty()){
                 throw new IllegalArgumentException("Vul een speler in.");
             }
         this.naam = naam;
     }
 
     public void setPositie(String positie) {
-        if(positie == null || positie.isEmpty()){
+        if(positie == null || positie.trim().isEmpty()){
             throw new IllegalArgumentException("Vul een positie in.");
         }
         this.positie = positie;
